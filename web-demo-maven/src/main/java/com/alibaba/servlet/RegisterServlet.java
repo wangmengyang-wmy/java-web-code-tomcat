@@ -1,8 +1,9 @@
 package com.alibaba.servlet;
 
-import com.dao.UserDao;
-import com.dao.impl.UserDaoImplement;
-import com.entity.User;
+
+import com.alibaba.dao.UserDao;
+import com.alibaba.dao.impl.UserDaoImpl;
+import com.alibaba.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +28,7 @@ public class RegisterServlet extends HttpServlet {
         user.setPassword(pwd);
         user.setId(id);
 
-        UserDao ud = new UserDaoImplement();
+        UserDao ud = new UserDaoImpl();
 
         if(ud.register(user)){
             request.setAttribute("name", name);  //向request域中放置参数

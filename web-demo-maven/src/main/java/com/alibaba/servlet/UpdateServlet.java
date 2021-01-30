@@ -1,8 +1,8 @@
 package com.alibaba.servlet;
 
-import com.dao.UserDao;
-import com.dao.impl.UserDaoImplement;
-import com.entity.User;
+import com.alibaba.dao.UserDao;
+import com.alibaba.dao.impl.UserDaoImpl;
+import com.alibaba.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +32,7 @@ public class UpdateServlet extends HttpServlet {
 
         user.setId(id);
 
-        UserDao ud = new UserDaoImplement();
+        UserDao ud = new UserDaoImpl();
 
         if(ud.update(user)){
             request.getRequestDispatcher("/addUpdateDeleteSuccess.jsp").forward(request, response);

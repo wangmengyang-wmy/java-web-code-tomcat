@@ -1,7 +1,9 @@
 package com.alibaba.servlet;
 
-import com.dao.UserDao;
-import com.dao.impl.UserDaoImplement;
+
+
+import com.alibaba.dao.UserDao;
+import com.alibaba.dao.impl.UserDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         String name = request.getParameter("name"); //得到jsp页面传过来的参数
         String password = request.getParameter("password");
 
-        UserDao ud = new UserDaoImplement();
+        UserDao ud = new UserDaoImpl();
 
         if (ud.login(name, password)) {
             request.setAttribute("hello", "欢迎用户" + name); //向request域中放置信息

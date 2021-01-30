@@ -19,7 +19,6 @@ public class ShowAllServlet extends HttpServlet {
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         response.setContentType("text/html;charset=utf-8");
         UserDao ud = new UserDaoImpl();
         List<User> userAll = ud.getUserAll();

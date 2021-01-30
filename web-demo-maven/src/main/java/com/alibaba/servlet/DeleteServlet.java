@@ -1,7 +1,7 @@
 package com.alibaba.servlet;
 
-import com.dao.UserDao;
-import com.dao.impl.UserDaoImplement;
+import com.alibaba.dao.UserDao;
+import com.alibaba.dao.impl.UserDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +23,7 @@ public class DeleteServlet extends HttpServlet {
 
         String id = request.getParameter("id");
 
-        UserDao ud = new UserDaoImplement();
+        UserDao ud = new UserDaoImpl();
 
         if (ud.delete(id)) {
             request.getRequestDispatcher("addUpdateDeleteSuccess.jsp").forward(request, response);
