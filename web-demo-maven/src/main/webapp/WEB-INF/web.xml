@@ -9,6 +9,10 @@
   <filter><!-- 过滤器配置-->
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.alibaba.filter.EncodingFilter</filter-class><!--全路径 从根包开始一直到类名-->
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>zs</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>EncodingFilter</filter-name>
