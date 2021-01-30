@@ -1,7 +1,73 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
 
 <web-app>
+
   <display-name>Archetype Created Web Application</display-name>
+  <filter><!-- 过滤器配置-->
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.alibaba.filter.EncodingFilter</filter-class><!--全路径 从根包开始一直到类名-->
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern> <!--*即为过滤所有-->
+  </filter-mapping>
+
+  <!--servlet类路径配置-->
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.alibaba.servlet.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>com.alibaba.servlet.RegisterServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>showAllServlet</servlet-name>
+    <servlet-class>com.alibaba.servlet.ShowAllServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>deleteServlet</servlet-name>
+    <servlet-class>com.alibaba.servlet.DeleteServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>updateServlet</servlet-name>
+    <servlet-class>com.alibaba.servlet.UpdateServlet</servlet-class>
+  </servlet>
+
+  <!--servlet类映射配置-->
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/registerServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>showAllServlet</servlet-name>
+    <url-pattern>/showAllServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>deleteServlet</servlet-name>
+    <url-pattern>/deleteServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>updateServlet</servlet-name>
+    <url-pattern>/updateServlet</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list><!--默认首页地址-->
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
